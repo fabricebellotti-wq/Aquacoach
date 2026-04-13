@@ -42,6 +42,9 @@ dependencies:
   # Apple HealthKit
   health: ^12.2.0
 
+  # Biométrie (Face ID / empreinte Android)
+  local_auth: ^2.3.0
+
   # Utils
   connectivity_plus: ^6.1.4
   flutter_local_notifications: ^18.0.1

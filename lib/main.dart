@@ -17,18 +17,19 @@ void main() async {
   );
 }
 
-class AquaCoachApp extends StatelessWidget {
+class AquaCoachApp extends ConsumerWidget {
   const AquaCoachApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerProvider);
     return MaterialApp.router(
       title: 'AquaCoach',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.system,
-      routerConfig: appRouter,
+      routerConfig: router,
     );
   }
 }
