@@ -4,6 +4,7 @@ import '../../../core/theme/app_theme.dart';
 import '../../../domain/models/enums.dart';
 import '../../../domain/models/training_block.dart';
 import '../../../domain/models/training_session.dart';
+import '../../session/session_screen.dart';
 
 /// Card séance du jour avec résumé des blocs et bouton démarrer
 class TodaySessionCard extends StatelessWidget {
@@ -65,7 +66,10 @@ class TodaySessionCard extends StatelessWidget {
             // Bouton démarrer
             FilledButton.icon(
               onPressed: () {
-                // TODO: naviguer vers la séance guidée
+                Navigator.of(context).push(MaterialPageRoute(
+                  fullscreenDialog: true,
+                  builder: (_) => SessionScreen(session: session),
+                ));
               },
               icon: const Icon(Icons.play_arrow),
               label: const Text('Démarrer la séance'),
